@@ -14,27 +14,27 @@ key_frame = 'data/key_frame.txt'
 
 # Init the parameters
 camera_intrinsic = np.float64([
-    [911.3619384765625, 0.0, 652.8096923828125],
-    [0.0, 911.0020141601562, 364.7060852050781],
+    [911.362, 0.0, 652.81],
+    [0.0, 911.002, 364.706],
     [0.0, 0.0, 1.0]
 ])
 distCoeffs = np.float64([0.0, 0.0, 0.0, 0.0, 0.0])
 
 lidar_to_camera_extrinsic = np.float64([
-    [-0.3154500, -0.9484218, -0.0314238,-0.0132929],
-    [ 0.3151832, -0.0734820, -0.9461818,-0.538881],
-    [ 0.8950703, -0.3083773,  0.3221065,-0.0140522],
+    [-0.3187587, -0.9473149, -0.0314238,-0.0132929],
+    [ 0.3149248, -0.0745818, -0.9461818,-0.538881],
+    [ 0.8939884, -0.3114998,  0.3221065,-0.0140522],
     [ 0, 0, 0, 1]
 ])
 
-# lidar_to_camera_extrinsic = np.float64([
-#     [-0.305056, -0.951714, -0.0343655, 0.059404],
-#     [ 0.26425, -0.0499221, -0.963161, -0.293531],
-#     [ 0.914939, -0.302899,  0.26672, 0.0122927],
-#     [ 0, 0, 0, 1]
-# ])
-
-
+lidar_to_camera_extrinsic = np.float64([
+    [-0.314745, -0.948059, -0.0460449, -0.00389479],
+    [ 0.259136, -0.0391605, -0.965047, -0.25794],
+    [ 0.913117, -0.315676,  0.258001, -0.0854201],
+    [ 0, 0, 0, 1]
+])
+a = np.linalg.inv(lidar_to_camera_extrinsic)
+print(a)
 if __name__ == "__main__":
     # Load the files with given parameters
     pcd = color_cloud.load_pcd(pointcloud_file)
@@ -71,7 +71,7 @@ if __name__ == "__main__":
         pcd.colors = o3d.utility.Vector3dVector(point_colors_rgb)
         FOR1 = o3d.geometry.TriangleMesh.create_coordinate_frame(size=15, origin=[0, 0, 0])
         pcd2 = color_cloud.load_pcd("F:/data/mid360/2.pcd")
-        o3d.visualization.draw_geometries([FOR1,pcd])
+        o3d.visualization.draw_geometries([pcd])
         
     o3d.io.write_point_cloud("data/result/copy_of_fragment.pcd", pcd)
     
