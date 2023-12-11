@@ -7,6 +7,7 @@ import cv2
 import color_cloud
 import copy
 
+
 # Init the file name
 pointcloud_file = 'data/3.pcd'
 img_file = 'data/1.png'
