@@ -10,6 +10,7 @@ import copy
 # Init the file name
 pointcloud_file = 'data/3.pcd'
 img_file = 'data/1.png'
+img_file = 'F:/data/mask.png'
 key_frame = 'data/key_frame.txt'
 
 # Init the parameters
