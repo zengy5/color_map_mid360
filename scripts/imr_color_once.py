@@ -10,6 +10,7 @@ import copy
 
 # Init the file name
 pointcloud_file = 'data/3.pcd'
+pointcloud_file = 'F:/data/visible_map.pcd'
 img_file = 'data/1.png'
 img_file = 'F:/data/mask.png'
 key_frame = 'data/key_frame.txt'
@@ -55,7 +56,7 @@ if __name__ == "__main__":
     # pcd.transform(pose_inverse)
     
     # Choose function
-    if_pic = 0
+    if_pic = 1
 
     # Project pcd onto the image, project only once
     if if_pic:

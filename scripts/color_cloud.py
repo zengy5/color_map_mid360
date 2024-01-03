@@ -114,7 +114,7 @@ def color_pic(pcd, img_file, rvec, tvec, camera_intrinsic, distCoeffs):
         x = point[0][0]
         y = point[0][1]
         if 0 <= y < result_image.shape[0] and 0 <= x < result_image.shape[1] and point_matrix[i,0]>=0:
-            result_image[y, x] = [0, 0, 0]
+            result_image[y, x] = [255, 0, 0]
         i += 1
     return result_image
 
